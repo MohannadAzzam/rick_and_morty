@@ -28,14 +28,14 @@ class Character {
 class Info {
     int count;
     int pages;
-    String next;
-    dynamic prev;
+    String? next;
+    String? prev;
 
     Info({
         required this.count,
         required this.pages,
-        required this.next,
-        required this.prev,
+        this.next,
+         this.prev,
     });
 
     factory Info.fromJson(Map<String, dynamic> json) => Info(
