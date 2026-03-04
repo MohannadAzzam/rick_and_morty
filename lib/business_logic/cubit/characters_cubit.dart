@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:rick_and_morty/constants/strings.dart';
 import 'package:rick_and_morty/data/models/characters.dart';
 import 'package:http/http.dart' as http;
 
@@ -12,14 +13,12 @@ class CharactersCubit extends Cubit<CharactersState> {
     emit(CharactersLoading());
     try {
       final response = await http.get(
-        Uri.parse('https://rickandmortyapi.com/api/character'),
+        Uri.parse(baseUrl),
       );
-      // Simulate a network call to fetch characters
-      // await Future.delayed(const Duration(seconds: 2));
-      // For demonstration, we will create a dummy character
+
       if (response.statusCode == 200) {
         final characterData = characterFromJson(response.body);
-        emit(CharactersSuccess(characterData));
+        emit(CharactersSuccess(characterData) );
       } else{
         emit(CharactersError("فشل جلب البيانات من السيرفر"));
       }
