@@ -11,7 +11,26 @@ class CharactersCubit extends Cubit<CharactersState> {
   CharactersCubit(this.charactersRepository) : super(CharactersInitial());
 
 
+// دالة جلب البيانات
+  void getCharacters(String url) async {
+    // 1. أخبر الواجهة بأننا في حالة تحميل
+    emit(CharactersLoading());
 
+    try {
+      // 2. اطلب البيانات من الـ Repository
+      final character = await charactersRepository.fetchAllCharacters(url);
+
+      if (character != null) {
+        // 3. إذا نجحت، أرسل البيانات كاملة (بما فيها روابط next و prev)
+        emit(CharactersSuccess(character));
+      } else {
+        emit(CharactersError("لا توجد بيانات حالياً"));
+      }
+    } catch (e) {
+      emit(CharactersError(e.toString()));
+    }
+  }
+}
 
   // Future<void> fetchCharacters() async {
   //   emit(CharactersLoading());
@@ -40,4 +59,4 @@ class CharactersCubit extends Cubit<CharactersState> {
   //     emit(CharactersError(e.toString()));
   //   }
   // }
-}
+
