@@ -11,7 +11,6 @@ class CharactersScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: MyColors.myYellow,
         title: const Text('Characters'),
-        
       ),
       body: const Center(
         child: Text(
