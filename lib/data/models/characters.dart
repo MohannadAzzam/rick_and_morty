@@ -21,6 +21,7 @@ class Character {
   };
 }
 
+
 class Info {
   int count;
   int pages;
