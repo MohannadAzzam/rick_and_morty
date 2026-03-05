@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/data/models/characters.dart';
+import '../../data/models/characters.dart';
 // استورد الموديل الخاص بك هنا
 
 class CharacterDetailsScreen extends StatelessWidget {

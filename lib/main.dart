@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/app_router.dart';
-import 'package:rick_and_morty/constants/strings.dart';
+import 'app_router.dart';
+import 'constants/strings.dart';
 
 void main() {
   runApp(RickAndMorty(appRouter: AppRouter()));

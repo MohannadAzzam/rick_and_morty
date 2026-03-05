@@ -2,8 +2,9 @@
 // import 'package:http/http.dart' as http;
 // import 'package:rick_and_morty/constants/strings.dart';
 
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 
 class CharactersWebServices {
   // دالة لجلب البيانات من أي رابط (URL) نرسله لها
@@ -18,12 +19,10 @@ class CharactersWebServices {
         return jsonDecode(response.body);
       } else {
         // في حال وجود خطأ من السيرفر (مثل 404 أو 500)
-        print("Server Error: ${response.statusCode}");
         return {};
       }
     } catch (e) {
       // في حال وجود خطأ في الإنترنت أو الرابط
-      print("Network Error: $e");
       return {};
     }
   }
