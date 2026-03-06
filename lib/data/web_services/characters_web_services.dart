@@ -1,12 +1,9 @@
-// import 'package:dio/dio.dart';
-// import 'package:http/http.dart' as http;
-// import 'package:rick_and_morty/constants/strings.dart';
-
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
 class CharactersWebServices {
+
   // دالة لجلب البيانات من أي رابط (URL) نرسله لها
   Future<Map<String, dynamic>> getAllCharacters(String url) async {
     try {
@@ -27,28 +24,3 @@ class CharactersWebServices {
     }
   }
 }
-
-// class CharactersWebServices {
-//   late Dio dio;
-
-//   CharactersWebServices() {
-//     BaseOptions options = BaseOptions(
-//       baseUrl: baseUrl,
-//       receiveDataWhenStatusError: true,
-//       connectTimeout: const Duration(seconds: 20), // انتظر 20 ثانية قبل الفصل
-//       receiveTimeout: const Duration(seconds: 20),
-//     );
-//     dio = Dio(options);
-//   }
-
-//   // دالة تجلب البيانات الخام (Map)
-//   Future<Map<String, dynamic>> getAllCharacters(String url) async {
-//     try {
-//       Response response = await dio.get(url);
-//       return response.data; // يعيد البيانات كـ Map
-//     } catch (e) {
-//       print(e.toString());
-//       return {}; // في حال الخطأ نرجع ماب فارغة
-//     }
-//   }
-// }
