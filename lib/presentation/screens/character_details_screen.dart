@@ -35,3 +35,4 @@ class CharacterDetailsScreen extends StatelessWidget {
     );
   }
 }
+
