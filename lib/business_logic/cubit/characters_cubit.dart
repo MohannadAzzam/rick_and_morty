@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import '../../data/models/characters.dart';
 import '../../data/repository/characters_repository.dart';
@@ -28,6 +29,20 @@ class CharactersCubit extends Cubit<CharactersState> {
       }
     } catch (e) {
       emit(CharactersError(e.toString()));
+    }
+  }
+}
+
+
+class ThemeCubit extends Cubit<ThemeMode> {
+  // الحالة الابتدائية هي وضع النظام (أو يمكنك تحديد Light)
+  ThemeCubit() : super(ThemeMode.light);
+
+  void toggleTheme() {
+    if (state == ThemeMode.light) {
+      emit(ThemeMode.dark);
+    } else {
+      emit(ThemeMode.light);
     }
   }
 }

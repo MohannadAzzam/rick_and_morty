@@ -15,17 +15,25 @@ class CharactersScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Rick and Morty Characters"),
         backgroundColor: Colors.blueGrey,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(settingsScreen);
+            },
+            icon: Icon(Icons.settings),
+          ),
+        ],
       ),
       body: BlocBuilder<CharactersCubit, CharactersState>(
         builder: (context, state) {
           if (state is CharactersLoading) {
             return const Center(child: CircularProgressIndicator());
-          } 
-          
+          }
+
           if (state is CharactersSuccess) {
             final characterData = state.character; // هذا هو الموديل (Character)
-            final results = characterData.results;    // قائمة الشخصيات
-            final info = characterData.info;          // معلومات الصفحات
+            final results = characterData.results; // قائمة الشخصيات
+            final info = characterData.info; // معلومات الصفحات
 
             return Column(
               children: [
@@ -35,28 +43,32 @@ class CharactersScreen extends StatelessWidget {
                     itemCount: results.length,
                     itemBuilder: (context, index) {
                       return ListTile(
-  onTap: () {
-    // الانتقال لصفحة التفاصيل مع تمرير بيانات الشخصية الحالية
-    Navigator.pushNamed(
-      context, 
-      chracterDetailsScreen, // الثابت المعرف في strings.dart
-      arguments: results[index], 
-    );
-  },
-  leading: Hero(
-    tag: results[index].id, // يجب أن يكون نفس الـ tag في صفحة التفاصيل
-    child: CachedNetworkImage(
-      imageUrl: results[index].image,
-      placeholder: (context, url) => const CircularProgressIndicator(),
-      errorWidget: (context, url, error) => const Icon(Icons.error),
-      imageBuilder: (context, imageProvider) => CircleAvatar(
-        backgroundImage: imageProvider,
-      ),
-    ),
-  ),
-  title: Text(results[index].name),
-  subtitle: Text("${results[index].status.name} - ${results[index].species.name}"),
-);
+                        onTap: () {
+                          // الانتقال لصفحة التفاصيل مع تمرير بيانات الشخصية الحالية
+                          Navigator.pushNamed(
+                            context,
+                            chracterDetailsScreen, // الثابت المعرف في strings.dart
+                            arguments: results[index],
+                          );
+                        },
+                        leading: Hero(
+                          tag: results[index]
+                              .id, // يجب أن يكون نفس الـ tag في صفحة التفاصيل
+                          child: CachedNetworkImage(
+                            imageUrl: results[index].image,
+                            placeholder: (context, url) =>
+                                const CircularProgressIndicator(),
+                            errorWidget: (context, url, error) =>
+                                const Icon(Icons.error),
+                            imageBuilder: (context, imageProvider) =>
+                                CircleAvatar(backgroundImage: imageProvider),
+                          ),
+                        ),
+                        title: Text(results[index].name),
+                        subtitle: Text(
+                          "${results[index].status.name} - ${results[index].species.name}",
+                        ),
+                      );
                     },
                   ),
                 ),
@@ -70,11 +82,13 @@ class CharactersScreen extends StatelessWidget {
                     children: [
                       // زر السابق
                       ElevatedButton(
-                        onPressed: info.prev == null 
-                            ? null 
+                        onPressed: info.prev == null
+                            ? null
                             : () {
                                 // نطلب الصفحة السابقة من الكيوبيت
-                                context.read<CharactersCubit>().getCharacters(info.prev!);
+                                context.read<CharactersCubit>().getCharacters(
+                                  info.prev!,
+                                );
                               },
                         child: const Text("Previous"),
                       ),
@@ -84,11 +98,13 @@ class CharactersScreen extends StatelessWidget {
 
                       // زر التالي
                       ElevatedButton(
-                        onPressed: (info.next == null) 
-                            ? null 
+                        onPressed: (info.next == null)
+                            ? null
                             : () {
                                 // نطلب الصفحة التالية من الكيوبيت
-                                context.read<CharactersCubit>().getCharacters(info.next!);
+                                context.read<CharactersCubit>().getCharacters(
+                                  info.next!,
+                                );
                               },
                         child: const Text("Next"),
                       ),
@@ -97,8 +113,8 @@ class CharactersScreen extends StatelessWidget {
                 ),
               ],
             );
-          } 
-          
+          }
+
           if (state is CharactersError) {
             return Center(child: Text(state.errorMessage));
           }
