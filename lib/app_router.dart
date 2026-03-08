@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'business_logic/cubit/characters_cubit.dart';
 import 'constants/strings.dart';
 import 'data/models/characters.dart';
