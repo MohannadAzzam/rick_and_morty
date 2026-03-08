@@ -5,13 +5,14 @@ import 'package:rick_and_morty/business_logic/cubit/characters_cubit.dart';
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('إعدادات المظهر')),
-      body: Center(
+      body: Container(
+        margin: EdgeInsets.all(8),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text("الوضع الداكن"),
             Switch(

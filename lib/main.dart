@@ -27,11 +27,11 @@ class RickAndMorty extends StatelessWidget {
         return MaterialApp(
           title: 'Theme Switcher Bloc',
           theme: ThemeData(
-            //   useMaterial3: true,
-            //   appBarTheme: AppBarTheme(
-            //     foregroundColor: Colors.black,
-            //     backgroundColor: Colors.cyan,
-            //   ),
+            useMaterial3: true,
+            appBarTheme: AppBarTheme(
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.blueGrey,
+            ),
           ), // سمات الوضع الفاتح
           darkTheme: ThemeData.dark(), // سمات الوضع المظلم
           themeMode: currentTheme, // هذه هي القيمة التي تتغير من الـ Cubit

@@ -14,7 +14,6 @@ class CharactersScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Rick and Morty Characters"),
-        backgroundColor: Colors.blueGrey,
         actions: [
           IconButton(
             onPressed: () {
