@@ -1,11 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../../data/models/characters.dart';
-// استورد الموديل الخاص بك هنا
 
 class CharacterDetailsScreen extends StatelessWidget {
-  final Result character; // يفضل استخدام النوع Result بدلاً من dynamic
-
+  final Result character; 
   const CharacterDetailsScreen({super.key, required this.character});
 
   @override
@@ -15,7 +13,7 @@ class CharacterDetailsScreen extends StatelessWidget {
       body: Column(
         children: [
           Hero(
-            tag: character.id, // حركة Hero Animation جميلة
+            tag: character.id,
             child: CachedNetworkImage(imageUrl: character.image, width: double.infinity, fit: BoxFit.cover),
           ),
           Padding(
