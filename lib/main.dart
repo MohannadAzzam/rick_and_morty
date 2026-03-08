@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty/business_logic/character_cubit/characters_cubit.dart';
-import 'package:rick_and_morty/business_logic/theme_cubit/theme_cubit.dart';
+import 'business_logic/theme_cubit/theme_cubit.dart';
 
 import 'app_router.dart';
 import 'constants/strings.dart';
