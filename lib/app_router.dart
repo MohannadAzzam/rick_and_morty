@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/presentation/screens/settings_screen.dart';
-import 'business_logic/cubit/characters_cubit.dart';
+import 'business_logic/character_cubit/characters_cubit.dart';
 import 'constants/strings.dart';
 import 'data/models/characters.dart';
 import 'data/repository/characters_repository.dart';

@@ -34,18 +34,6 @@ class CharactersCubit extends Cubit<CharactersState> {
 }
 
 
-class ThemeCubit extends Cubit<ThemeMode> {
-  // الحالة الابتدائية هي وضع النظام (أو يمكنك تحديد Light)
-  ThemeCubit() : super(ThemeMode.light);
-
-  void toggleTheme() {
-    if (state == ThemeMode.light) {
-      emit(ThemeMode.dark);
-    } else {
-      emit(ThemeMode.light);
-    }
-  }
-}
 
   // Future<void> fetchCharacters() async {
   //   emit(CharactersLoading());
