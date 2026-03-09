@@ -8,13 +8,13 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('إعدادات المظهر')),
+      appBar: AppBar(title: const Text('Settings')),
       body: Container(
         margin: EdgeInsets.all(8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("الوضع الداكن"),
+            const Text("Dark mode", style: TextStyle(fontSize: 18)),
             Switch(
               value: context.watch<ThemeCubit>().state == ThemeMode.dark,
               onChanged: (value) {
