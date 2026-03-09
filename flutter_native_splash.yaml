@@ -1,0 +1,20 @@
+flutter_native_splash:
+ 
+  color: "#ffffff"
+  image: assets/images/splash_logo.png
+
+  color_dark: "#000000"
+  image: assets/images/splash_logo.png
+
+  android_12:
+    color: "#ffffff"
+  image: assets/images/splash_logo.png
+
+    color_dark: "#000000"
+  image: assets/images/splash_logo.png
+
+  # The android, ios and web parameters can be used to disable generating a splash screen on a given
+  # platform.
+  android: true
+  ios: true
+  web: true
