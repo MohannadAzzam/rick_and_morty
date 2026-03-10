@@ -3,11 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'business_logic/theme_cubit/theme_cubit.dart';
 import 'app_router.dart';
 import 'constants/strings.dart';
-// import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
-  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     BlocProvider(
