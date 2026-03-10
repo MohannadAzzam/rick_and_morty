@@ -81,6 +81,8 @@ class CharactersScreen extends StatelessWidget {
                     children: [
                       // زر السابق
                       Expanded(
+                        flex: 1,
+
                         child: ElevatedButton(
                           onPressed: info.prev == null
                               ? null
@@ -95,10 +97,14 @@ class CharactersScreen extends StatelessWidget {
                       ),
 
                       // عرض إحصائية بسيطة
-                      Text("Total: ${info.count}"),
+                      Expanded(
+                        flex: 1,
+                        child: Center(child: Text("Total: ${info.count}")),
+                      ),
 
                       // زر التالي
                       Expanded(
+                        flex: 1,
                         child: ElevatedButton(
                           onPressed: (info.next == null)
                               ? null
