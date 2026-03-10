@@ -80,32 +80,36 @@ class CharactersScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       // زر السابق
-                      ElevatedButton(
-                        onPressed: info.prev == null
-                            ? null
-                            : () {
-                                // نطلب الصفحة السابقة من الكيوبيت
-                                context.read<CharactersCubit>().getCharacters(
-                                  info.prev!,
-                                );
-                              },
-                        child: const Text("Previous"),
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: info.prev == null
+                              ? null
+                              : () {
+                                  // نطلب الصفحة السابقة من الكيوبيت
+                                  context.read<CharactersCubit>().getCharacters(
+                                    info.prev!,
+                                  );
+                                },
+                          child: const Icon(Icons.navigate_before),
+                        ),
                       ),
 
                       // عرض إحصائية بسيطة
                       Text("Total: ${info.count}"),
 
                       // زر التالي
-                      ElevatedButton(
-                        onPressed: (info.next == null)
-                            ? null
-                            : () {
-                                // نطلب الصفحة التالية من الكيوبيت
-                                context.read<CharactersCubit>().getCharacters(
-                                  info.next!,
-                                );
-                              },
-                        child: const Text("Next"),
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: (info.next == null)
+                              ? null
+                              : () {
+                                  // نطلب الصفحة التالية من الكيوبيت
+                                  context.read<CharactersCubit>().getCharacters(
+                                    info.next!,
+                                  );
+                                },
+                          child: const Icon(Icons.navigate_next),
+                        ),
                       ),
                     ],
                   ),
