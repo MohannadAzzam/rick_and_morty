@@ -61,13 +61,13 @@ class CharacterDetailsScreen extends StatelessWidget {
       expandedHeight: 400,
       pinned: true,
       stretch: true,
-      backgroundColor: Colors.blueGrey,
+      // backgroundColor: Colors.blueGrey,
       flexibleSpace: FlexibleSpaceBar(
         title: Text(
           character.name,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            // color: Colors.white,
           ),
         ),
         background: Hero(
