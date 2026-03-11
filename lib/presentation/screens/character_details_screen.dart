@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/presentation/widgets/details_build_info_card.dart';
-import 'package:rick_and_morty/presentation/widgets/details_sliverAppBar.dart';
+import '../widgets/details_build_info_card.dart';
+import '../widgets/details_sliverAppBar.dart';
 import '../../data/models/characters.dart';
 
 class CharacterDetailsScreen extends StatelessWidget {
