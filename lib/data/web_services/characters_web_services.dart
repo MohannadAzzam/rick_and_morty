@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class CharactersWebServices {
-
   // دالة لجلب البيانات من أي رابط (URL) نرسله لها
   Future<Map<String, dynamic>> getAllCharacters(String url) async {
     try {
