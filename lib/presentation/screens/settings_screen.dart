@@ -14,7 +14,7 @@ class SettingsScreen extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Dark mode", style: TextStyle(fontSize: 18)),
+            Text("Dark mode", style: TextStyle(fontSize: 18)),
             Switch(
               value: context.watch<ThemeCubit>().state == ThemeMode.dark,
               onChanged: (value) {
